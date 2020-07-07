@@ -15,6 +15,13 @@
   padding: 8px;
 }
 
+form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .pesquisa .fields {
   max-width: 300px;
   width: 80%;
@@ -37,5 +44,7 @@
   background: #EFFBFF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-
+  
 }
+
+

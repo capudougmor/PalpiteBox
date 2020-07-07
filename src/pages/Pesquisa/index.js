@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 
 import './styles.css'
@@ -7,6 +7,12 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const Pesquisa = () => {
+  function handleRegister(e) {
+
+
+    e.preventDefault()
+  }
+
   return (
     <>
       <Header />
@@ -17,28 +23,26 @@ const Pesquisa = () => {
           <br/>
           Por isso, estamos sempre abertos a ouvir a sua opinião.
         </p>
-        <div className='fields'>
-          <label>Seu nome:</label>
-          <input type="text"/>
-        </div>
-        <div className='fields'>
-          <label>E-mail:</label>
-          <input type="text"/>
-        </div>
-        <div className='fields'>
-          <label>Whatsapp:</label>
-          <input type="text"/>
-        </div>
-        <div className='fields'>
-          <label>Sua crítica ou sugestão:</label>
-          <input type="text"/>
-        </div>
-
-        <div className='button'>
-          <Link to='#'>
-            Enviar sugestão
-          </Link>
-        </div>
+        <form onSubmit={handleRegister}>
+          <div className='fields'>
+            <label>Seu nome:</label>
+            <input type="text"/>
+          </div>
+          <div className='fields'>
+            <label>E-mail:</label>
+            <input type="text"/>
+          </div>
+          <div className='fields'>
+            <label>Whatsapp:</label>
+            <input type="text"/>
+          </div>
+          <div className='fields'>
+            <label>Sua crítica ou sugestão:</label>
+            <input type="text"/>
+          </div>
+          <button className='button' type='submit' >Enviar sugestão</button>
+        </form>
+        
       </div>
       <Footer />
     </>
