@@ -1,0 +1,41 @@
+.pesquisa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pesquisa h1 {
+  text-align: center;
+  padding: 8px;
+}
+
+.pesquisa p {
+  text-align: center;
+  padding: 8px;
+}
+
+.pesquisa .fields {
+  max-width: 300px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fields label {
+  padding: 10px 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.pesquisa .fields input {
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background: #EFFBFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+}
