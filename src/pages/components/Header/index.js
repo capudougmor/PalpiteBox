@@ -7,15 +7,19 @@ import logoImg from '../../../public/logo.png';
 
 
 const Header = () => {
+  const companyName = localStorage.getItem('companyName')
+
   return (
     <>
       <div className='header'>
-          <div className='container'>
-            <Link className='logo' to='/'>
-              <img className='logoImg' src={ logoImg } alt="PalpiteBox" />
-            </Link>
-          </div >
-          <div className='navbar' >
+        <div className='container'>
+        <span>Bem vinda, {companyName} </span>
+          <Link className='logo' to='/'>
+            <img className='logoImg' src={ logoImg } alt="PalpiteBox" />
+          </Link>
+        </div >
+        <div className='navbar' >
+          <div>
             <Link to='/sobre'>
               Sobre
             </Link>
@@ -26,6 +30,18 @@ const Header = () => {
               Pesquisa
             </Link>
           </div>
+          <div>
+            <Link to='/login'>
+              Login
+            </Link>
+            <Link to='/contato'>
+              Logout
+            </Link>
+            <Link to='/registro'>
+              Registro
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   )

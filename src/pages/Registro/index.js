@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import './styles.css'
 import api from '../../services/api'
@@ -6,7 +7,10 @@ import api from '../../services/api'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+
 const Registro = () => {
+
+  const history = useHistory()
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -22,6 +26,7 @@ const Registro = () => {
       const response = await api.post('company', data)
 
       alert(`Seu id de acesso: ${response.data.id}`)
+      history.push('/')
     } catch (err) {
       alert('Erro no cadastro, tente novamente.', err)
     }

@@ -15,10 +15,9 @@
   z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 
 }
-
 .logoImg {
   width: 150px;
   padding: 12px;
@@ -30,12 +29,15 @@
 }
 
 .navbar {
+  width: 100%;
   padding: 12px;  
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar a {
   padding: 0 8px ;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   color: black;
 

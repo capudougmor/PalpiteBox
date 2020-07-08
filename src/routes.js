@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Sobre from './pages/Sobre';
 import Pesquisa from './pages/Pesquisa';
 import Registro from './pages/Registro'
+import Login from './pages/Login'
 
 export default function Routes() {
     return (
@@ -14,6 +15,7 @@ export default function Routes() {
                 <Route path="/sobre" component={Sobre} />
                 <Route path="/pesquisa" component={Pesquisa} />
                 <Route path="/registro" component={Registro} />
+                <Route path="/login" component={Login} />
 
             </Switch>        
         </BrowserRouter>
