@@ -18,6 +18,14 @@ input, button, textarea {
     font: 400 18px Roboto, sans-serif;
 }
 
+.pesquisa,
+.registro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 button {
     cursor: pointer; /* curso com icone para clicar*/
 }
@@ -25,7 +33,7 @@ button {
 form input {
     width: 100%;
     height: 60px;
-    text-align: center;
+    text-align: left;
     color: #333;
     border: 1px solid #dcdce6;
     border-radius: 8px;
@@ -46,7 +54,7 @@ form textarea {
 
 
 .button {
-    max-width: 400px;
+    max-width: 300px;
     width: 70%;
     height: 60px;
     background: #1AC8FF;

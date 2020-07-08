@@ -1,10 +1,10 @@
 
-.pesquisa h1 {
+ h1 {
   text-align: center;
-  padding: 8px;
+  padding: 12px;
 }
 
-.pesquisa p {
+ p {
   text-align: center;
   padding: 8px;
 }
@@ -16,7 +16,7 @@ form {
   align-items: center;
 }
 
-.pesquisa .fields {
+.fields {
   max-width: 300px;
   width: 80%;
   display: flex;
@@ -31,7 +31,7 @@ form {
   line-height: 24px;
 }
 
-.pesquisa .fields input {
+ .fields input {
   padding: 10px;
   height: 40px;
   border-radius: 8px;
