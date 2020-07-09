@@ -1,12 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import useSWR from 'swr'
 
 import './styles.css'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+// const fetcher = (...args) => fetch(...args).then(res => res.json())
+
 const Home = () => {
+  const { data, error } = useSWR('http://localhost:3333/getCoupons', 
+    (url) => axios(url).then(r => r.data))
+
   return (
     <>
       <Header />
@@ -22,9 +29,12 @@ const Home = () => {
         <p>
           Ao dar sua opinião e/ou sugestão, ganhe 10% na sua próxima compra.
         </p>
-        <p>
-          Mensagem
-        </p>
+        {!data && <p> Carregando... </p> }
+        {!error && data && data.showCoupon &&
+          <p>
+            {data.message}
+          </p>
+        }
       </div>
       <Footer />
     </>

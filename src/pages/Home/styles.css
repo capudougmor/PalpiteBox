@@ -1,5 +1,5 @@
 .home {
-  padding: 24px;
+  padding: 24px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,6 +14,7 @@ div a {
 }
 
 .home p {
+  max-width: 55vw;
   margin: 6vh;
   font-weight: 500;
 }
