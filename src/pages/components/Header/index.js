@@ -13,7 +13,7 @@ const Header = () => {
     <>
       <div className='header'>
         <div className='container'>
-        <span>Bem vinda, {companyName} </span>
+          {companyName && <span>Bem vinda, {companyName} </span> }
           <Link className='logo' to='/'>
             <img className='logoImg' src={ logoImg } alt="PalpiteBox" />
           </Link>
