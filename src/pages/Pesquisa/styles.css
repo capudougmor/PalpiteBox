@@ -43,3 +43,20 @@ form {
 }
 
 
+.pesquisa .radios {
+  max-width: 300px;
+  width: 80%;
+  display: flex;
+}
+
+.radios label {
+  margin-top: 12px;
+  padding: 10px;
+  font-style: normal;
+  text-align: center;
+}
+
+.radios label input {
+  margin: 0 10px;
+  height: 16px;  
+}

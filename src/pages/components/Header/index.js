@@ -13,7 +13,7 @@ const Header = () => {
     <>
       <div className='header'>
         <div className='container'>
-          {companyName && <span>Bem vinda, {companyName} </span> }
+          {companyName && <span>Bem vindo, {companyName} </span> }
           <Link className='logo' to='/'>
             <img className='logoImg' src={ logoImg } alt="PalpiteBox" />
           </Link>
@@ -31,6 +31,11 @@ const Header = () => {
             </Link>
           </div>
           <div>
+            {companyName && 
+              <Link to='/dash'>
+                Administrar
+              </Link>
+            }
             <Link to='/login'>
               Login
             </Link>

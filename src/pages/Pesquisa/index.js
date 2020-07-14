@@ -13,6 +13,8 @@ const Pesquisa = () => {
     e.preventDefault()
   }
 
+  const notas = [1, 2, 3, 4, 5]
+
   return (
     <>
       <Header />
@@ -39,6 +41,13 @@ const Pesquisa = () => {
           <div className='fields'>
             <label>Sua crítica ou sugestão:</label>
             <input type="text"/>
+          </div>
+          <div className="radios">
+            {notas.map(nota => {
+              return (
+                <label>{nota}<br/>
+                <input className='radio' type="radio" name='nota' value={nota} /></label>)
+            })}
           </div>
           <button className='button' type='submit' >Enviar sugestão</button>
         </form>
