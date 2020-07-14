@@ -1,7 +1,7 @@
 
 .pesquisa h1 {
   text-align: center;
-  padding: 8px;
+  padding: 16px;
 }
 
 .pesquisa p {
@@ -24,7 +24,6 @@ form {
 }
 
 .fields label {
-  padding: 10px 0;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -50,7 +49,6 @@ form {
 }
 
 .radios label {
-  margin-top: 12px;
   padding: 10px;
   font-style: normal;
   text-align: center;

@@ -102,3 +102,22 @@ form textarea {
 .back-link:hover {
     opacity: 0.8;
 }
+
+.radios {
+max-width: 300px;
+width: 80%;
+display: flex;
+}
+
+.radios label {
+    font-weight: 700;
+    padding: 30px;
+    font-style: normal;
+    text-align: center;
+    
+}
+
+.radios label input {
+    margin: 0 10px;
+    height: 16px;  
+    }

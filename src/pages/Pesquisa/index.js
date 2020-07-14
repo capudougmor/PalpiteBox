@@ -42,6 +42,9 @@ const Pesquisa = () => {
             <label>Sua crítica ou sugestão:</label>
             <input type="text"/>
           </div>
+          <div className='fields'>
+            <label>Nota:</label>
+          </div>
           <div className="radios">
             {notas.map(nota => {
               return (
