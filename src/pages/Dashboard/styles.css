@@ -1,0 +1,24 @@
+
+.dash form {
+  width: 100%;
+}
+.dash .radios {
+  max-width: 400px;
+  text-align-last: left;
+}
+
+.radios label {
+  padding: 10px 0 ;
+  font-style: normal;
+  text-align: center;
+}
+
+.radios label input {
+  margin: 0 10px;
+  height: 16px;  
+}
+
+.dash div.fields {
+  flex-direction: row;
+  max-width: none;
+}

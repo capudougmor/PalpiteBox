@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState } from 'react'
 // import { Link } from 'react-router-dom'
 
 import './styles.css'
@@ -7,10 +7,17 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const Pesquisa = () => {
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [whatsapp, setWhatsapp] = useState('')
+  const [opinion, setOpinion] = useState('')
+  const [Nota, setNota] = useState('')
+
   function handleRegister(e) {
-
-
     e.preventDefault()
+
+
   }
 
   const notas = [1, 2, 3, 4, 5]
@@ -28,7 +35,9 @@ const Pesquisa = () => {
         <form onSubmit={handleRegister}>
           <div className='fields'>
             <label>Seu nome:</label>
-            <input type="text"/>
+            <input 
+              value={name}
+              type="text"/>
           </div>
           <div className='fields'>
             <label>E-mail:</label>
