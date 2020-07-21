@@ -19,7 +19,7 @@ const Registro = () => {
     e.preventDefault()
 
     const data = {
-      name, email,
+      name, email
     }
 
     try {
