@@ -47,7 +47,11 @@ const Header = () => {
             <Link to='/login'>
               Login
             </Link>
-            <button onClick={handleLogout}>Logout</button>
+            
+            {companyName && 
+              <button onClick={handleLogout}>Logout</button>
+            }
+            
             <Link to='/registro'>
               Registro
             </Link>
