@@ -13,7 +13,6 @@ const Registro = () => {
   const history = useHistory()
 
   const [email, setEmail] = useState('')
-  const [id] = useState('')
 
   async function handleLogin(e) {
     e.preventDefault()
@@ -21,10 +20,9 @@ const Registro = () => {
     try {
       const response = await api.post('session', {email})
 
-      localStorage.setItem('companyId', id)
       localStorage.setItem('companyName', response.data.name)
 
-      history.push('/pesquisa')
+      history.push('/dash')
     } catch (err) {
       alert('Erro no login, tente novamente.', err)
     }

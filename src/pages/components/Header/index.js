@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import './styles.css'
 
@@ -8,6 +8,14 @@ import logoImg from '../../../public/logo.png';
 
 const Header = () => {
   const companyName = localStorage.getItem('companyName')
+  const history = useHistory()
+
+
+  function handleLogout() {
+    localStorage.clear();
+
+    history.push('/');
+  }
 
   return (
     <>
@@ -39,9 +47,7 @@ const Header = () => {
             <Link to='/login'>
               Login
             </Link>
-            <Link to='/contato'>
-              Logout
-            </Link>
+            <button onClick={handleLogout}>Logout</button>
             <Link to='/registro'>
               Registro
             </Link>

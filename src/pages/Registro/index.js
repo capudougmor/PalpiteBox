@@ -26,7 +26,7 @@ const Registro = () => {
       const response = await api.post('company', data)
 
       alert(`Seu id de acesso: ${response.data.id}`)
-      history.push('/')
+      history.push('/login')
     } catch (err) {
       alert('Erro no cadastro, tente novamente.', err)
     }
