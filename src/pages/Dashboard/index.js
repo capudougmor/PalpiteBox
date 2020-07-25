@@ -5,12 +5,12 @@ import './styles.css'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
- 
+
 const Dash = () => {
     const [opinions, setOpinions] = useState([])
 
     const company_id = localStorage.getItem('company_id')
-    const ckecked = 'ckecked'
+    const [rememberMe, setRememberMe] = useState()
 
     useEffect(() => {
         api.get('opinion', {
@@ -26,16 +26,20 @@ const Dash = () => {
         <>
             <Header />
             <div className="dash">
-                <h1>Seus cupons</h1>
+                <h1>Seus Cupons</h1>
                 <form onSubmit='#'>
                     <div className='radios'>
                         <label>
-                            <input className='radio' type="checkbox" name='ativo' value='ativo' />
+                            <input 
+                                className='radio'   
+                                type="checkbox" 
+                                checked={rememberMe} 
+                                onChange={e => setRememberMe(e.target.rememberMe)}/>
                                     Promoção ativa?
-                                </label>
+                        </label>
                     </div>
                     <div className="fields">
-                        <label >Promoção</label>
+                        <label >Promoção: </label>
                         <input type="text" placeholder="Cumpon no valor de 10%" />
                     </div>
                     <h3>Opiniões</h3>
