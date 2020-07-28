@@ -21,7 +21,7 @@ const Header = () => {
     <>
       <div className='header'>
         <div className='container'>
-          {companyName && <span>Bem vindo, {companyName} </span> }
+          {companyName && companyName !== "undefined" && <span>Bem vindo, {companyName} </span> }
           <Link className='logo' to='/'>
             <img className='logoImg' src={ logoImg } alt="PalpiteBox" />
           </Link>
@@ -39,7 +39,7 @@ const Header = () => {
             </Link>
           </div>
           <div>
-            {companyName && 
+            {companyName && companyName !== "undefined" &&
               <Link to='/dash'>
                 Administrar
               </Link>

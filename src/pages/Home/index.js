@@ -26,7 +26,7 @@ const Home = () => {
         </div>
         
         {!data && <p> Carregando... </p> }
-        {!error && data && (data[0].msgCkecked == true) &&
+        {!error && data && (data[0].msgCkecked === true) &&
           <p>
             {data[0].msgCupon}
           </p>

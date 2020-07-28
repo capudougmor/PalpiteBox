@@ -13,12 +13,13 @@ const Login = () => {
   const history = useHistory()
 
   const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   async function handleLogin(e) {
     e.preventDefault()
 
     try {
-      const response = await api.post('session', {email})
+      const response = await api.post('session', {email, password})
 
       localStorage.setItem('companyName', response.data.name)
 
@@ -41,6 +42,15 @@ const Login = () => {
               onChange={e => setEmail(e.target.value)}
               type="text"
               placeholder='E-mail'
+            />
+          </div>
+          <div className='fields'>
+            <label>Senha:</label>
+            <input
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              type="text"
+              placeholder='Senha'
             />
           </div>
           <button className='button' type='submit' >Entrar</button>

@@ -14,12 +14,13 @@ const Registro = () => {
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   async function handleRegister(e) {
     e.preventDefault()
 
     const data = {
-      name, email
+      name, email, password
     }
 
     try {
@@ -55,6 +56,15 @@ const Registro = () => {
                 onChange={e => setEmail(e.target.value)}
                 type="text"
                 placeholder='E-mail'
+              />
+            </div>
+            <div className='fields'>
+              <label>Senha:</label>
+              <input
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                type="text"
+                placeholder='Senha'
               />
             </div>
             <button className='button' type='submit' >Registrar empresa</button>
