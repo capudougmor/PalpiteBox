@@ -22,6 +22,7 @@ const Login = () => {
       const response = await api.post('session', {email, password})
 
       localStorage.setItem('companyName', response.data.name)
+      localStorage.setItem('company_id', response.data.id)
 
       history.push('/dash')
     } catch (err) {

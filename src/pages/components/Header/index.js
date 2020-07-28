@@ -41,7 +41,7 @@ const Header = () => {
           <div>
             {companyName && companyName !== "undefined" &&
               <Link to='/dash'>
-                Administrar
+                Promoções
               </Link>
             }
             <Link to='/login'>
