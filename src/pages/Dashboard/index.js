@@ -74,16 +74,16 @@ const Dash = () => {
                         </label>
                     </div>
                     <div className="fields">
-                        <label >Promoção: </label>
-                        <input 
+                        <label id="title" >Promoção: </label>
+                        <textarea 
                             value={msgCupon}
                             onChange={e => setMsgCupon(e.target.value)}
-                            type="text" />
+                            type="textarea" />
                     </div>
                     <button className='button' type='submit' >Registrar Promoção</button>
                 </form>
 
-                <h3>Opiniões</h3>
+                <h3>Opniões</h3>
                 <table>
                     <thead>
                         <tr>
@@ -91,20 +91,21 @@ const Dash = () => {
                             <th scope='col'>Nome</th>
                             <th scope='col'>E-mail</th>
                             <th scope='col'>Whatsapp</th>
-                            <th scope='col'>Cupom</th>
-                            <th scope='col'>Promo</th>
+                            <th scope='col'>Nota</th>
+                            <th scope='col'>Cupon</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {opinions.map(opinion => (
-                            <tr >
-                                <th scope="row" key='id'>  </th>
-                                <td > {opinion.id} </td>
+                            <tr key={opinion.id}>
+                                <td> {opinion.id} </td>
                                 <td> {opinion.name} </td>
                                 <td> {opinion.email} </td>
                                 <td> {opinion.whatsapp} </td>
                                 <td> {opinion.score}</td>
-                                <td><button type="button" >Excluir</button></td>
+                                <td> {opinion.cuponkey}</td>
+                                <td><button >Excluir</button></td>
                             </tr>
                         ))
                         }

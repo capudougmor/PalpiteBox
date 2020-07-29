@@ -1,10 +1,22 @@
 
 .dash form {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
-.dash .radios {
-  max-width: 400px;
-  text-align-last: left;
+
+.radios {
+  justify-content: center;
+}
+
+.dash form #title {
+  padding-right: 10px;
+}
+
+.dash form textarea {
+  text-align: left;
+  padding: 8px;
+  max-height: 60px;
 }
 
 .radios label {
@@ -19,11 +31,12 @@
 }
 
 .dash div.fields {
-  flex-direction: row;
+  /* flex-direction: row; */
   max-width: none;
 }
 
 
 table {
   width: 100%;
+  text-align: center;
 }

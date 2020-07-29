@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 
 import './styles.css'
 import api from '../../services/api'
@@ -9,6 +9,7 @@ import Footer from '../components/Footer'
 
 const Pesquisa = () => {
 
+  const [companyName, setCompanyName] = useState('')
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
@@ -16,20 +17,23 @@ const Pesquisa = () => {
   const [score, setScore] = useState('')
 
   const notas = [1, 2, 3, 4, 5]
-  const history = useHistory()
+  // state para a mensagem de sucesso
+  const [sucess, setSucess] = useState(false)
+  const [retorno, setRetorno] = useState({})
 
   async function handleRegister(e) {
     e.preventDefault()
 
     const data = {
-      name, email, whatsapp, suggestion, score
+      companyName, name, email, whatsapp, suggestion, score
     }
 
     try {
       await api.post('opinion', data)
 
       alert('Enviado com sucesso!')
-      history.push('/')
+      setSucess(true)
+      setRetorno(data)
     } catch (err) {
       alert('Erro ao enviar dados!')
     }
@@ -44,6 +48,7 @@ const Pesquisa = () => {
         <br />
         Por isso, estamos sempre abertos a ouvir a sua opinião.
       </p>
+      { !sucess &&
         <form onSubmit={handleRegister}>
           <div className='fields'>
             <label>Seu nome:</label>
@@ -72,6 +77,15 @@ const Pesquisa = () => {
               placeholder='Whatsapp' />
           </div>
           <div className='fields'>
+            <label>Empresa:</label>
+            <input
+              value={companyName}
+              onChange={e => setCompanyName(e.target.value)}
+              type="text"
+              placeholder='Empresa'
+            />
+          </div>
+          <div className='fields'>
             <label>Sua crítica ou sugestão:</label>
             <input
               value={suggestion}
@@ -97,7 +111,12 @@ const Pesquisa = () => {
           </div>
           <button className='button' type='submit' >Enviar sugestão</button>
         </form>
-
+      }
+      {sucess && 
+        <div>
+          <p></p>
+        </div>
+      }
       </div>
       <Footer />
     </>
