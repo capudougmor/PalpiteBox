@@ -17,8 +17,8 @@ const Home = () => {
       <Header />
       <div className='home'>
         <p>
-          O restaurante X sempre busca por atender melhor seus clientes. Por isso, estamos sempre abertos a ouvir a sua opinião.
-        </p>
+          O restaurante X sempre busca por atender melhor seus clientes. Por isso, estamos sempre abertos a ouvir a sua opinião.</p> 
+        {/* </p> */}
         <div className='button'>
           <Link to='/pesquisa'>
             De a sua opinião ou sugestão 

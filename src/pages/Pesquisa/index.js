@@ -9,7 +9,7 @@ import Footer from '../components/Footer'
 
 const Pesquisa = () => {
 
-  const [companyName, setCompanyName] = useState('')
+  const companyName = localStorage.getItem('companyName')
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
@@ -30,10 +30,9 @@ const Pesquisa = () => {
 
     try {
       const response = await api.post('opinion', data)
-
+      
       alert('Enviado com sucesso!')
       setSucess(true)
-      console.log(response.data.cuponKey)
       setRetorno(response.data.cuponKey)
     } catch (err) {
       alert('Erro ao enviar dados!')
@@ -76,19 +75,10 @@ const Pesquisa = () => {
               onChange={e => setWhatsapp(e.target.value)}
               type="text"
               placeholder='Whatsapp' />
-          </div>
-          <div className='fields'>
-            <label>Empresa:</label>
-            <input
-              value={companyName}
-              onChange={e => setCompanyName(e.target.value)}
-              type="text"
-              placeholder='Empresa'
-            />
-          </div>
+          </div>          
           <div className='fields'>
             <label>Sua crítica ou sugestão:</label>
-            <input
+            <textarea
               value={suggestion}
               onChange={e => setSuggestion(e.target.value)}
               type="text"
@@ -114,12 +104,15 @@ const Pesquisa = () => {
         </form>
       }
       {sucess && <div className='promotion'>
-          <p className="cuponKey">Obrigado por contribuir com sua sugetão ou critica.</p>
+          <p className="cuponKey">Obrigado por contribuir com sua opinião.</p>
           {
             retorno && <p className="cuponKey">Seu cupom: 
-            <br/><br/> {retorno}</p>
+            <br/> <strong>{retorno}</strong>
+            <br/>
+            <span>Tire um print ou uma foto desta página e leve ao estabelecimento.</span>
+            </p>
           }
-          <p>Tire um print ou uma foto desta página e leve ao estabelecimento.</p>
+          
         </div>
       }
       </div>

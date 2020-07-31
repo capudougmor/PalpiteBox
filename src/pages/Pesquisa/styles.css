@@ -33,14 +33,16 @@ form {
 .pesquisa .fields input {
   padding: 10px;
   height: 40px;
-  border-radius: 8px;
   border: none;
   background: #EFFBFF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  
+  border-radius: 4px;  
 }
 
+.pesquisa .fields textarea {
+  text-align: left;
+  padding: 6px;
+}
 
 .pesquisa .radios {
   max-width: 300px;
@@ -59,6 +61,12 @@ form {
   height: 16px;  
 }
 
+.fields textarea {
+  background-color: #EFFBFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+}
+
 .promotion {
   display: flex;
   flex-direction: column;
@@ -74,4 +82,9 @@ p.cuponKey {
   border-bottom: 1px solid #8f90fd;
   align-self: center;
   justify-self: center;
+}
+
+p.cuponKey strong {
+  font-size: 24px;
+  line-height: 60px;
 }
