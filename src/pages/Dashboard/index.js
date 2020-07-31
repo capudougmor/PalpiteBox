@@ -41,7 +41,6 @@ const Dash = () => {
             msgCkecked,
             msgCupon
         }
-        console.log(msgCkecked)
 
         try {
             await api.put('profile', data, {
@@ -87,19 +86,19 @@ const Dash = () => {
                 <table>
                     <thead>
                         <tr>
-                            <th scope='col'>#</th>
                             <th scope='col'>Nome</th>
                             <th scope='col'>E-mail</th>
                             <th scope='col'>Whatsapp</th>
                             <th scope='col'>Nota</th>
                             <th scope='col'>Cupon</th>
+                            <th scope='col'>Sugestão</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {opinions.map(opinion => (
                             <tr key={opinion.id}>
-                                <td> {opinion.id} </td>
+                                <td> {opinion.sugestion} </td>
                                 <td> {opinion.name} </td>
                                 <td> {opinion.email} </td>
                                 <td> {opinion.whatsapp} </td>

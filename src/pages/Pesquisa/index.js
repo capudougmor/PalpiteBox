@@ -19,7 +19,7 @@ const Pesquisa = () => {
   const notas = [1, 2, 3, 4, 5]
   // state para a mensagem de sucesso
   const [sucess, setSucess] = useState(false)
-  const [retorno, setRetorno] = useState({})
+  const [retorno, setRetorno] = useState()
 
   async function handleRegister(e) {
     e.preventDefault()
@@ -29,11 +29,12 @@ const Pesquisa = () => {
     }
 
     try {
-      await api.post('opinion', data)
+      const response = await api.post('opinion', data)
 
       alert('Enviado com sucesso!')
       setSucess(true)
-      setRetorno(data)
+      console.log(response.data.cuponKey)
+      setRetorno(response.data.cuponKey)
     } catch (err) {
       alert('Erro ao enviar dados!')
     }
@@ -112,9 +113,13 @@ const Pesquisa = () => {
           <button className='button' type='submit' >Enviar sugestão</button>
         </form>
       }
-      {sucess && 
-        <div>
-          <p></p>
+      {sucess && <div className='promotion'>
+          <p className="cuponKey">Obrigado por contribuir com sua sugetão ou critica.</p>
+          {
+            retorno && <p className="cuponKey">Seu cupom: 
+            <br/><br/> {retorno}</p>
+          }
+          <p>Tire um print ou uma foto desta página e leve ao estabelecimento.</p>
         </div>
       }
       </div>
