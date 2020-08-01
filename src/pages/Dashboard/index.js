@@ -29,8 +29,10 @@ const Dash = () => {
 
     useEffect(() => {
         api.get(`showCupon/${companyName}`).then(response => {
-            setMsgCupon(response.data[0].msgCupon)
-            setMsgCkecked(response.data[0].msgCkecked)
+            setMsgCupon(response.data.msgCupon)
+            setMsgCkecked(response.data.msgCkecked)
+  console.log(response.data)
+
         })
     }, [companyName])
     
@@ -65,6 +67,7 @@ const Dash = () => {
                     <div className='radios'>
                         <label>
                             <input
+                                name="isGoing"
                                 className='radio'
                                 type="checkbox"
                                 checked={msgCkecked}
@@ -98,13 +101,12 @@ const Dash = () => {
                     <tbody>
                         {opinions.map(opinion => (
                             <tr key={opinion.id}>
-                                <td> {opinion.sugestion} </td>
                                 <td> {opinion.name} </td>
                                 <td> {opinion.email} </td>
                                 <td> {opinion.whatsapp} </td>
                                 <td> {opinion.score}</td>
-                                <td> {opinion.cuponkey}</td>
-                                <td><button >Excluir</button></td>
+                                <td> {opinion.cuponKey}</td>
+                                <td> {opinion.suggestion} </td>
                             </tr>
                         ))
                         }
