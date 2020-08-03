@@ -9,7 +9,7 @@
 
 body {
     width: 90vw;
-    height: 100vh;
+    /* height: 100vh; */
     font: 400 18px Roboto, sans-serif;
 }
 
@@ -18,7 +18,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 #root 
