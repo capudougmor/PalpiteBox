@@ -16,8 +16,12 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-
 }
+
+.container span {
+  font: 700;
+}
+
 .logoImg {
   width: 150px;
   padding: 12px;
@@ -34,7 +38,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
+} 
 
 .navbar a {
   padding: 0 8px ;
